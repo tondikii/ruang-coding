@@ -1,14 +1,17 @@
 [ 
     {
         "id": 1,
-        "name": "HTML"
+        "name": "HTML",
+        "description":  "HTML stands for Hyper Text Markup Language.\r\nHTML is the standard markup language for creating Web pages.\r\nHTML describes the structure of a Web page.\r\nHTML consists of a series of elements.\r\nHTML elements tell the browser how to display the content.\r\nHTML elements label pieces of content such as 'this is a heading', 'this is a paragraph', 'this is a link', etc."
     },
     {
         "id": 2,
-        "name": "CSS"
+        "name": "CSS",
+        "description": "CSS is the language we use to style an HTML document.\r\nCSS describes how HTML elements should be displayed."
     },
     {
         "id": 3,
-        "name": "Javascript"
+        "name": "JavaScript",
+        "description": "JavaScript is the world's most popular programming language.\r\nJavaScript is the programming language of the Web.\r\nJavaScript is easy to learn."
     }
 ]
