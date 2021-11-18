@@ -1,22 +1,14 @@
-[
+[ 
     {
         "id": 1,
-        "username": "luthfanadli",
-        "email": "luthfan@gmail.com",
-        "password": "luthfan91",
-        "fullName": "Luthfan Adli Wicaksono",
-        "age": 25,
-        "gender": "Male",
-        "phoneNumber": "08123123123"
+        "name": "HTML"
     },
     {
         "id": 2,
-        "username": "tonkidi",
-        "email": "tondikiag@gmail.com",
-        "password": "admin123",
-        "fullName": "Tondiki Andika Gurning",
-        "age": 17,
-        "gender": "Male",
-        "phoneNumber": "083897781157"
+        "name": "CSS"
+    },
+    {
+        "id": 3,
+        "name": "Javascript"
     }
 ]
