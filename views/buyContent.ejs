@@ -1,0 +1,53 @@
+<%- include('partials/header', {title: 'Buy Content'}) %>
+<%- include('partials/navbar') %>
+
+<div class="container">
+    <section class="overlay">
+        <div class="card" style="width: 18rem">
+            <h1 class="toCenterBuy">Buy</h1>
+            <img src="<%= data.dataValues.imageUrl %>" class="card-img-top" alt="" />
+            <div class="card-body toCenter">
+              <h5 class="card-title"><%= data.dataValues.name %></h5>
+              <p class="card-text">price: <%= currency(data.dataValues.price) %></p>
+            </div>
+            <div class="button toCenterButton">
+                <a href="/ruangcoding/home/<%= data.dataValues.id %>/buy">
+                    <button class="btn btn-primary">Yes</button>
+                </a>
+                <a href="/ruangcoding/home">
+                    <button class="btn btn-warning">Back</button>
+                </a>
+            </div>
+        </div>
+    </section>
+  </div>
+
+  <style>
+    body{
+      background-color: #2eb5c0;
+    }
+    .container {
+      height: 100vh;  
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .card {
+      /* background-color: aqua; */
+      /* background-color: #1f0a50; */
+      background: white;
+      display: flex;
+      padding: 25px;
+      border-radius: 10px;
+    }
+    .toCenterBuy{
+        margin-left: 75px;
+    }
+    .toCenter{
+        margin-left: 25px;
+    }
+    .toCenterButton{
+        margin-left: 65px;
+    }
+  </style>
+  <%- include('partials/footer') %>
