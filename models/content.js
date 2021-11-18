@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       Content.belongsTo(models.Course, {foreignKey: 'CourseId'})
       Content.belongsToMany(models.User, {through: 'UserId'})
     }
+    nickNameByGender(){
+      if (this.gender === 'Male') return `Mr ${this}`
+    }
   };
   Content.init({
     name: DataTypes.STRING,
