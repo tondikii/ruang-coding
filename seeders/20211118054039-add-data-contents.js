@@ -13,6 +13,7 @@ module.exports = {
      * }], {});
     */
      let data = JSON.parse(fs.readFileSync('./data/contents.json', 'utf-8')).map(el => {
+      delete el.id;
       el.createdAt = new Date();
       el.updatedAt = new Date();
       return el;

@@ -1,5 +1,7 @@
 'use strict';
 const fs =  require('fs')
+
+const getBcrypt = require('../helpers/bcrypt')
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /**
@@ -12,6 +14,8 @@ module.exports = {
      * }], {});
     */
    let data = JSON.parse(fs.readFileSync('./data/users.json', 'utf-8')).map(el => {
+     delete el.id;
+     el.password = getBcrypt(el.password)
      el.createdAt = new Date();
      el.updatedAt = new Date();
      return el;
