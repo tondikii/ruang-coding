@@ -11,10 +11,10 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      description: {
+      imageUrl: {
         type: Sequelize.STRING
       },
-      link: {
+      videoUrl: {
         type: Sequelize.STRING
       },
       createdAt: {

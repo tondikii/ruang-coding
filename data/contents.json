@@ -1,5 +1,50 @@
 [
     {
-        
+        "id": 1,
+        "name": "HTML Introduction Part 1\r\nYour First Web Page",
+        "imageUrl": "https://img.youtube.com/vi/BvJYXl2ywUE/sddefault.jpg",
+        "videoUrl": "https://www.youtube.com/embed/BvJYXl2ywUE",
+        "CourseId": 1,
+        "price": 15000
+    },
+    {
+        "id": 2,
+        "name": "HTML Introduction Part 2\r\nBasic HTML Elements",
+        "imageUrl": "https://img.youtube.com/vi/PypMN-yui4Y/sddefault.jpg",
+        "videoUrl": "https://www.youtube.com/embed/PypMN-yui4Y",
+        "CourseId": 1,
+        "price": 15000
+    },
+    {
+        "id": 3,
+        "name": "HTML Introduction Part 3\r\n Advanced HTML Elements",
+        "imageUrl": "https://img.youtube.com/vi/1rbo_HHt5nw/sddefault.jpg",
+        "videoUrl": "https://www.youtube.com/embed/1rbo_HHt5nw",
+        "CourseId": 1,
+        "price": 25000
+    },
+    {
+        "id": 4,
+        "name": "HTML Introduction Part 4\r\n Links and Inputs",
+        "imageUrl": "https://img.youtube.com/vi/bFvjE4ZRtSE/sddefault.jpg",
+        "videoUrl": "https://www.youtube.com/embed/bFvjE4ZRtSE",
+        "CourseId": 1,
+        "price": 25000
+    },
+    {
+        "id": 5,
+        "name": "CSS in 20 Minutes",
+        "imageUrl": "https://img.youtube.com/vi/1PnVor36_40/sddefault.jpg",
+        "videoUrl": "https://www.youtube.com/embed/1PnVor36_40",
+        "CourseId": 2,
+        "price": 35000
+    },
+    {
+        "id": 6,
+        "name": "JavaScript in 5 Minutes",
+        "imageUrl": "https://img.youtube.com/vi/c-I5S_zTwAc/sddefault.jpg",
+        "videoUrl": "https://www.youtube.com/embed/c-I5S_zTwAc?controls=0",
+        "CourseId": 3,
+        "price": 15000
     }
 ]

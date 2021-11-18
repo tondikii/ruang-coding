@@ -19,3 +19,6 @@
         inputs: "requirement input2 yang ada pada database tabel Users"
     }
 }
+
+*NOTE*
+using whitespace for description of Courses
