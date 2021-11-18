@@ -2,6 +2,7 @@ const {User, Promo, Course, Content} = require('../models/index')
 const bcrypt = require('bcryptjs'); 
 const {Op} = require("sequelize");
 const currency = require('../helpers/currency');
+
 class Controller {
     static landingPage(req, res){
         Course.findAll()
@@ -78,7 +79,7 @@ class Controller {
             // console.log(result);
             let data = result.map(el => el.dataValues)
             console.log({data});
-            res.render('home', {data});
+            res.render('home', {data, currency});
             })
             .catch(err => {
                 console.log(err);
@@ -92,7 +93,7 @@ class Controller {
             })
             .then(result => {
             let data = result.map(el => el.dataValues)
-            res.render('home', {data} );
+            res.render('home', {data, currency} );
             })
             .catch(err => {
                 console.log(err);
@@ -106,7 +107,7 @@ class Controller {
             })
             .then(result => {
                 let data = result.map(el => el.dataValues)
-                res.render('home', {data} );
+                res.render('home', {data, currency} );
             })
             .catch(err => {
                 console.log(err);
@@ -120,7 +121,7 @@ class Controller {
             })
             .then(result => {
                 let data = result.map(el => el.dataValues)
-                res.render('home', {data} );
+                res.render('home', {data, currency} );
             })
             .catch(err => {
                 console.log(err);
@@ -131,7 +132,7 @@ class Controller {
             .then(result => {
                 console.log(result);
                 let data = result.map(el => el.dataValues)
-                res.render('home', {data} );
+                res.render('home', {data, currency} );
             })
             .catch(err => {
                 console.log(err);
