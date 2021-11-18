@@ -1,11 +1,21 @@
 <%- include('partials/header', {title: 'Home'}) %>
-    <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/user/login">Log In</a></li>
-          <li><a href="/user/register">Sign Up</a></li>
-          <li><a href="/user/logout">Log Out</a></li>
-        </ul>
-      </nav>
-</body>
-</html>
+<%- include('partials/navbar') %>
+
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <% data.forEach(el => { %>
+      <div class="col">
+      <div class="card" style="width: 18rem">
+          <img src="<%= el.imageUrl %>" class="card-img-top" alt="" />
+          <div class="card-body">
+            <h5 class="card-title"><%= el.name %></h5>
+            <p class="card-text">price: <%= el.price %></p>
+            <div class="button">
+              <a href="/edit/<%= el.id%>" class="btn btn-warning">Buy</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <% }) %>
+  </div>
+
+<%- include('partials/footer') %>

@@ -17,8 +17,10 @@ module.exports = (sequelize, DataTypes) => {
   };
   Content.init({
     name: DataTypes.STRING,
-    description: DataTypes.STRING,
-    link: DataTypes.STRING
+    imageUrl: DataTypes.STRING,
+    videoUrl: DataTypes.STRING,
+    CourseId: DataTypes.INTEGER,
+    price: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Content',
