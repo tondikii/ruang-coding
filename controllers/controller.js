@@ -2,6 +2,7 @@ const {User, Promo, Course, Content} = require('../models/index')
 const bcrypt = require('bcryptjs'); 
 const {Op} = require("sequelize");
 const currency = require('../helpers/currency');
+
 const nodemailer = require('nodemailer')
 
 class Controller {
@@ -91,6 +92,7 @@ class Controller {
             console.log(result);
             let data = result.map(el => el.dataValues)
             console.log({data});
+
             res.render('home', {data: result, currency});
             })
             .catch(err => {
