@@ -198,6 +198,13 @@ class Controller {
             console.log(result);
             res.redirect('/');
         })
+        .catch(error => {
+            
+        })
+    }
+
+    static myCourse(req, res){
+        
     }
 
     static getLogout(req, res){

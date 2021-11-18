@@ -22,4 +22,5 @@ router.get('/logout', Controller.getLogout);
 router.get('/ruangcoding/home', Controller.displayCourses);
 router.get('/ruangcoding/home/:idContent', Controller.getPageBuyContent);
 router.get('/ruangcoding/home/:idContent/buy', Controller.buyContent);
+router.get('/ruangcoding/home/mycourse', Controller.myCourse);
 module.exports = router;
