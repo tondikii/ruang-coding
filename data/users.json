@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "role": "admin",
         "username": "luthfanadli",
         "email": "luthfan@gmail.com",
         "password": "luthfan91",
@@ -11,6 +12,7 @@
     },
     {
         "id": 2,
+        "role": "admin",
         "username": "tonkidi",
         "email": "tondikiag@gmail.com",
         "password": "admin123",

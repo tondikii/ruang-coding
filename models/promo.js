@@ -15,8 +15,18 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Promo.init({
-    code: DataTypes.STRING,
-    UserId: DataTypes.STRING
+    code: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    UserId: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    }
   }, {
     sequelize,
     modelName: 'Promo',

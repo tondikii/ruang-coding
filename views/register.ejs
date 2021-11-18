@@ -1,35 +1,38 @@
 <%- include('partials/header', {title: 'Sign Up'}) %>
 <div class="container">
   <section class="overlay">
-    <form action="/user/register" method="POST">
+    <form action="/register" method="POST">
       <h1>Register</h1>
         <div class="form-group">
           <label for="username">Username</label>
-          <input type="text" class="form-control" id="username" name="username" placeholder="Input Username">
+          <input type="text" class="form-control" id="username" name="username" placeholder="Input Username" required>
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="password" placeholder="Input Password">
+          <input type="password" class="form-control" id="password" name="password" placeholder="Input Password" required>
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="text" class="form-control" id="email" name="email" placeholder="Input your Email">
+          <input type="text" class="form-control" id="email" name="email" placeholder="Input your Email" required>
         </div>
         <div class="form-group">
           <label for="fullName">Full Name</label>
-          <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Input your Full Name">
+          <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Input your Full Name" required>
         </div>
         <div class="form-group">
           <label for="age"> Age </label>
-          <input type="text" class="form-control" id="age" name="age" placeholder="Input your Age">
+          <input type="text" class="form-control" id="age" name="age" placeholder="Input your Age" required>
         </div>
         <div class="form-group">
           <label for="gender"> Gender </label>
-          <input type="text" class="form-control" id="gender" name="gender" placeholder="Input Gender">
+          <select name="gender" id="gender" class="form-control" aria-placeholder="Choose your gender" required>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
         </div>
         <div class="form-group">
           <label for="gender"> Phone Number </label>
-          <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Input Phone Number">
+          <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Input Phone Number" required>
         </div>
         <br>
         <button type="submit" class="btn btn-primary">Submit</button>
