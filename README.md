@@ -23,4 +23,4 @@
 *NOTE*
 using whitespace for description of Courses
 
-semangat ges
+semangat gess
