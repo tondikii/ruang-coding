@@ -245,7 +245,7 @@ class Controller {
             .then(result => {
                 console.log(result);
                 let data = result.map(el => el.dataValues)
-                res.render('home', {data: result, currency});
+                res.render('myCourse', {data: result, currency});
             })
             .catch(err => {
                 console.log(err);
