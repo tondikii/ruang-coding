@@ -181,32 +181,78 @@ class Controller {
     static getPageBuyContent(req, res){
         const idContent = +req.params.idContent;
         // console.log(id);
-        Content.findOne({where: {id: idContent}})
+        const idUser = req.session.userId;
+        let promo;
+        Promo.findOne({where: {id: idUser}})
         .then(result => {
-            res.render('buyContent.ejs', {data: result, currency});
+            promo = result
+            return Content.findOne({where: {id: idContent}})
+        })
+        .then(result => {
+            res.render('buyContent.ejs', {data: result, currency, promo});
+        })
+        .catch(err => {
+            console.log(err);
+            res.send(err);
         })
     }
     
     static buyContent(req, res){
         const idContent = +req.params.idContent;
         const idUser = req.session.userId;
-        console.log(idUser);
-        console.log(idContent);
-        Content.update(
-            {UserId: id},
-            {where: {id: idContent}
-        })
-        .then(result => {
-            console.log(result);
-            res.redirect('/');
-        })
-        .catch(error => {
-            
-        })
+        const code = req.query.promoCode;
+        console.log({idContent, idUser});
+        let errors = 'Invalid Promo Code'
+        if(code) {
+            Promo.findOne({where: {id: idContent}})
+            .then(result => {
+                if (code === result.dataValues.code) {
+                    Content.update(
+                        {UserId: id},
+                        {where: {id: idContent}
+                    })
+                    .then(result => {
+                        console.log(result);
+                        res.redirect('/ruangcoding/home/mycourse');
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        res.redirect(`/ruangcoding/home/${idContent}?=${errors}`)
+                    }) 
+                } else {
+                    res.redirect(`/ruangcoding/home/${idContent}?=${errors}`)
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                res.redirect(`/ruangcoding/home/${idContent}?=${errors}`)
+            })
+        } else {
+            Content.update(
+                {UserId: id},
+                {where: {id: idContent}
+            })
+            .then(result => {
+                res.redirect('/ruangcoding/home/mycourse');
+            })
+            .catch(error => {
+                res.redirect(`/ruangcoding/home/${idContent}?=${errors}`);
+            })
+        }
     }
 
     static myCourse(req, res){
-        
+        const idUser = req.session.userId;
+        Content.findAll({where: {UserId: idUser}})
+            .then(result => {
+                console.log(result);
+                let data = result.map(el => el.dataValues)
+                res.render('myCourse', {data: result, currency});
+            })
+            .catch(err => {
+                console.log(err);
+                res.send(err)
+            });
     }
 
     static getLogout(req, res){

@@ -10,10 +10,8 @@
               <h5 class="card-title"><%= data.dataValues.name %></h5>
               <p class="card-text">price: <%= currency(data.dataValues.price) %></p>
             </div>
-            <div class="button toCenterButton">
-                <a href="/ruangcoding/home/<%= data.dataValues.id %>/buy">
-                    <button class="btn btn-primary">Yes</button>
-                </a>
+            <div class="button">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPromo">Yes</button>
                 <a href="/ruangcoding/home">
                     <button class="btn btn-warning">Back</button>
                 </a>
@@ -22,6 +20,29 @@
     </section>
   </div>
 
+  
+<div class="modal fade" id="modalPromo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Promo Code</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="/ruangcoding/home/<% data.dataValues.id %>/buy>" method="get">
+          <p>Input your promo code: <%= promo.dataValues.code %></p>
+          <input type="text" name="promoCode">
+          <button type="button" class="btn btn-secondary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <a href="/ruangcoding/home/<%= data.dataValues.id %>/buy">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Bayar Tanpa Promo</button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
   <style>
     body{
       background-color: #2eb5c0;
@@ -33,8 +54,6 @@
       align-items: center;
     }
     .card {
-      /* background-color: aqua; */
-      /* background-color: #1f0a50; */
       background: white;
       display: flex;
       padding: 25px;
@@ -50,4 +69,5 @@
         margin-left: 65px;
     }
   </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   <%- include('partials/footer') %>
