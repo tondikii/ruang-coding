@@ -29,14 +29,14 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form action="/ruangcoding/home/<%= data.dataValues.id/buy?=promoCode">
+        <form action="/ruangcoding/home/<% data.dataValues.id %>/buy>" method="get">
           <p>Input your promo code: <%= promo.dataValues.code %></p>
           <input type="text" name="promoCode">
           <button type="button" class="btn btn-secondary">Submit</button>
         </form>
       </div>
       <div class="modal-footer">
-        <a href="/ruangcoding/home/<%= data.dataValues.id/buy">
+        <a href="/ruangcoding/home/<%= data.dataValues.id %>/buy">
           <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Bayar Tanpa Promo</button>
         </a>
       </div>
